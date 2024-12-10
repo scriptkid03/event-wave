@@ -5,7 +5,7 @@ import {
   FaTimes,
   FaTicketAlt,
   FaEmpire,
-  FaAccusoft,
+  FaDashcube,
 } from "react-icons/fa";
 import { useAuth } from "../contexts/AuthContext";
 const Navbar = () => {
@@ -19,11 +19,11 @@ const Navbar = () => {
   };
 
   return (
-    <nav className='bg-green-950 border-b border-gray-800 px-4 md:px-6 py-4'>
+    <nav className='bg-zinc-700 border-b border-zinc-600 px-4 md:px-6 py-4'>
       <div className='flex justify-between items-center'>
         <div className='flex items-center space-x-4'>
           <Link to='/' className='flex items-center space-x-2'>
-            <FaEmpire className='text-blue-600 h-8 md:h-11' />
+            <FaDashcube className='text-blue-600 h-8 md:h-11' />
             <h1 className='text-xl font-bold text-gray-100'>Event Wave</h1>
           </Link>
         </div>
@@ -51,7 +51,7 @@ const Navbar = () => {
                   : "text-gray-100"
               } hover:text-gray-300`}
             >
-              <FaAccusoft />
+              <FaEmpire />
               <span>Dashboard</span>
             </Link>
           )}
@@ -92,7 +92,7 @@ const Navbar = () => {
                 className='flex items-center space-x-2 px-4 py-2 text-gray-600'
                 onClick={() => setIsOpen(false)}
               >
-                <FaAccusoft />
+                <FaDashcube />
                 <span>Dashboard</span>
               </Link>
             )}

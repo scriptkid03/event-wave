@@ -53,6 +53,10 @@ const Dashboard = () => {
     }
   };
 
+  const handleEditEvent = (eventId) => {
+    navigate(`/dashboard/editevent/${eventId}`);
+  };
+
   const filteredEvents = events.filter((event) => {
     const matchesSearch =
       event.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -91,7 +95,7 @@ const Dashboard = () => {
     const endDate = new Date(event.endDateTime);
 
     return (
-      <div className='bg-gray-800 rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow border border-gray-700'>
+      <div className='bg-zinc-800 rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow border border-zinc-700'>
         <div className='flex justify-between items-start'>
           <div>
             <h2 className='text-xl font-semibold text-gray-100'>
@@ -134,7 +138,7 @@ const Dashboard = () => {
                 : event.seatsLeft > 0
                 ? "bg-yellow-900 text-yellow-200"
                 : "bg-red-900 text-red-200"
-            } inline-flex items-center justify-center`}
+            } inline-flex items-center justify-center text-nowrap`}
           >
             {event.capacity - event?.attendees?.length} seats left
           </span>
@@ -158,7 +162,10 @@ const Dashboard = () => {
           >
             Delete
           </button>
-          <button className='px-4 py-2 text-sm rounded-lg border border-blue-800 text-blue-200 hover:bg-blue-900 transition-colors'>
+          <button
+            // onClick={() => handleEditEvent()}
+            className='px-4 py-2 text-sm rounded-lg border border-blue-800 text-blue-200 hover:bg-blue-900 transition-colors'
+          >
             Edit
           </button>
         </div>
@@ -190,7 +197,7 @@ const Dashboard = () => {
                 placeholder='Search events...'
                 value={searchQuery}
                 onChange={setSearchQuery}
-                className='w-full md:w-64 bg-gray-800 text-gray-100'
+                className='w-full md:w-64 bg-zinc-700 text-gray-100'
               />
             </div>
 
@@ -204,7 +211,7 @@ const Dashboard = () => {
             </div>
 
             {filteredEvents.length === 0 && (
-              <div className='text-center py-12 bg-gray-800 rounded-lg shadow-sm border border-gray-700'>
+              <div className='text-center py-12 bg-zinc-800 rounded-lg shadow-sm border border-zinc-700'>
                 <p className='text-gray-400'>
                   No events found matching your search.
                 </p>
@@ -222,11 +229,11 @@ const Dashboard = () => {
   };
 
   return (
-    <div className='min-h-screen bg-gray-900'>
+    <div className='min-h-screen bg-zinc-700'>
       {/* Mobile Navbar */}
-      <div className='md:hidden bg-gray-800 border-b border-gray-700 px-4 py-4'>
+      <div className='md:hidden bg-zinc-800 border-b border-zinc-700 px-4 py-4'>
         <div className='flex justify-between items-center'>
-          <h1 className='text-xl font-bold text-gray-800'>Admin Dashboard</h1>
+          <h1 className='text-xl font-bold text-zinc-500'>Admin Dashboard</h1>
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className='text-gray-600 hover:text-gray-900'
@@ -238,7 +245,7 @@ const Dashboard = () => {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className='md:hidden bg-gray-900 border-b border-gray-700'>
+        <div className='md:hidden bg-zinc-800 border-b border-zinc-700'>
           <nav className='px-4 py-2'>
             <ul className='space-y-2'>
               {menuItems.map((item, index) => (
@@ -250,8 +257,8 @@ const Dashboard = () => {
                     }}
                     className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-colors ${
                       location.pathname === item.path
-                        ? "bg-blue-50 text-blue-600"
-                        : "text-gray-600 hover:bg-gray-50"
+                        ? "bg-zinc-400"
+                        : "text-gray-600 hover:bg-zinc-50"
                     }`}
                   >
                     {item.icon}
@@ -275,7 +282,7 @@ const Dashboard = () => {
 
       <div className='flex'>
         {/* Desktop Sidebar */}
-        <div className='hidden md:block w-64 bg-gray-800 border-r border-gray-700 min-h-screen'>
+        <div className='hidden md:block w-64 bg-zinc-800 border-r border-zinc-700 min-h-screen'>
           <div className='p-6'>
             <h1 className='text-xl font-bold text-gray-100'>Admin Dashboard</h1>
             <nav className='mt-8'>
@@ -286,8 +293,8 @@ const Dashboard = () => {
                       href={item.path}
                       className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-colors ${
                         location.pathname === item.path
-                          ? "bg-blue-50 text-blue-600"
-                          : "text-gray-600 hover:bg-gray-50"
+                          ? "bg-zinc-400"
+                          : "text-zinc-300 hover:bg-zinc-50"
                       }`}
                     >
                       {item.icon}
@@ -310,7 +317,7 @@ const Dashboard = () => {
         </div>
 
         {/* Main Content */}
-        <div className='flex-1 p-4 md:p-8'>{renderContent()}</div>
+        <div className='flex-1 p-4 md:p-8 bg-zinc-700'>{renderContent()}</div>
       </div>
     </div>
   );

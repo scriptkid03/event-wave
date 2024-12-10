@@ -68,7 +68,7 @@ const Home = () => {
 
   // Enhanced animation variants
   const pageVariants = {
-    initial: { opacity: 0, backgroundColor: "#020617" }, // Dark background
+    initial: { opacity: 0, backgroundColor: "#3f3f46" }, // Dark background
     animate: {
       opacity: 1,
       transition: {
@@ -108,7 +108,7 @@ const Home = () => {
       initial='initial'
       animate='animate'
       exit='exit'
-      className='min-h-screen bg-gray-900 text-gray-100'
+      className='min-h-screen bg-zinc-950 text-gray-100'
     >
       <Navbar />
 
@@ -121,7 +121,7 @@ const Home = () => {
         <div className='flex flex-col lg:flex-row gap-8'>
           {/* Calendar Section */}
           <motion.div
-            className='lg:w-[350px] w-full bg-gray-800 rounded-xl p-4 shadow-lg'
+            className='lg:w-[350px] w-full bg-zinc-800 rounded-xl p-4 shadow-lg'
             initial={{ x: -50, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
@@ -152,7 +152,7 @@ const Home = () => {
                   placeholder='Search events...'
                   value={searchQuery}
                   onChange={setSearchQuery}
-                  className='w-full md:w-64 bg-gray-800 text-gray-100'
+                  className='w-full md:w-64 bg-inherit text-gray-100'
                 />
               </div>
             </div>
@@ -221,7 +221,7 @@ const Home = () => {
                             transition: { type: "spring", stiffness: 300 },
                           }}
                           whileTap={{ scale: 0.98 }}
-                          className='bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 border border-gray-700'
+                          className='bg-zinc-800 rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 border border-zinc-600'
                         >
                           <EventCard
                             id={event._id}

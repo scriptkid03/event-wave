@@ -71,9 +71,11 @@ const CreateEventModal = ({
               initial={{ scale: 0.95, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.95, opacity: 0 }}
-              className='bg-white rounded-lg shadow-xl p-6 w-full max-w-md relative'
+              className='bg-zinc-700 rounded-lg shadow-xl p-6 w-full max-w-md relative'
             >
-              <h2 className='text-2xl font-bold mb-6'>Create New Event</h2>
+              <h2 className='text-2xl text-white font-bold mb-6'>
+                Create New Event
+              </h2>
 
               <Formik
                 initialValues={{
@@ -90,12 +92,12 @@ const CreateEventModal = ({
                 onSubmit={handleSubmit}
               >
                 {({ errors, touched, isSubmitting }) => (
-                  <Form className='space-y-4'>
+                  <Form className='space-y-4 text-gray-500'>
                     <div>
                       <Field
                         name='title'
                         placeholder='Event Title'
-                        className='w-full p-2 border rounded focus:ring-2 focus:ring-primary'
+                        className='w-full p-2 border rounded focus:border-zinc-800 focus:ring-1 focus:ring-zinc-600 outline-none placeholder:text-gray-500'
                       />
                       {errors.title && touched.title && (
                         <div className='text-red-500 text-sm mt-1'>
@@ -109,7 +111,7 @@ const CreateEventModal = ({
                         as='textarea'
                         name='description'
                         placeholder='Description'
-                        className='w-full p-2 border rounded focus:ring-2 focus:ring-primary h-24'
+                        className='w-full p-2 border rounded focus:border-zinc-800 focus:ring-1 focus:ring-zinc-600 outline-none placeholder:text-gray-500 h-24'
                       />
                       {errors.description && touched.description && (
                         <div className='text-red-500 text-sm mt-1'>
@@ -122,7 +124,7 @@ const CreateEventModal = ({
                       <Field
                         as='select'
                         name='category'
-                        className='w-full p-2 border rounded focus:ring-2 focus:ring-primary'
+                        className='w-full p-2 border rounded focus:border-zinc-800 focus:ring-1 focus:ring-zinc-600 outline-none placeholder:text-gray-500'
                       >
                         <option value=''>Select Category</option>
                         {AVAILABLE_CATEGORIES.map((category) => (
@@ -143,7 +145,7 @@ const CreateEventModal = ({
                         <Field
                           type='datetime-local'
                           name='startDate'
-                          className='w-full p-2 border rounded focus:ring-2 focus:ring-primary'
+                          className='w-full p-2 border rounded focus:border-zinc-800 focus:ring-1 focus:ring-zinc-600 outline-none placeholder:text-gray-500'
                         />
                         {errors.startDate && touched.startDate && (
                           <div className='text-red-500 text-sm mt-1'>
@@ -156,7 +158,7 @@ const CreateEventModal = ({
                         <Field
                           type='datetime-local'
                           name='endDate'
-                          className='w-full p-2 border rounded focus:ring-2 focus:ring-primary'
+                          className='w-full p-2 border rounded focus:border-zinc-800 focus:ring-1 focus:ring-zinc-600 outline-none placeholder:text-gray-500'
                         />
                         {errors.endDate && touched.endDate && (
                           <div className='text-red-500 text-sm mt-1'>
@@ -170,7 +172,7 @@ const CreateEventModal = ({
                       <Field
                         name='location'
                         placeholder='Location'
-                        className='w-full p-2 border rounded focus:ring-2 focus:ring-primary'
+                        className='w-full p-2 border rounded focus:border-zinc-800 focus:ring-1 focus:ring-zinc-600 outline-none placeholder:text-gray-500'
                       />
                       {errors.location && touched.location && (
                         <div className='text-red-500 text-sm mt-1'>
@@ -183,7 +185,7 @@ const CreateEventModal = ({
                       <Field
                         name='capacity'
                         placeholder='Capacity'
-                        className='w-full p-2 border rounded focus:ring-2 focus:ring-primary'
+                        className='w-full p-2 border rounded focus:border-zinc-800 focus:ring-1 focus:ring-zinc-600 outline-none placeholder:text-gray-500'
                       />
                       {errors.capacity && touched.capacity && (
                         <div className='text-red-500 text-sm mt-1'>
@@ -193,14 +195,14 @@ const CreateEventModal = ({
                     </div>
 
                     <div>
-                      <label className='block text-sm font-medium text-gray-700 mb-2'>
+                      <label className='block text-sm font-medium text-white mb-2'>
                         Reminders (hours before event)
                       </label>
                       <Field
                         name='reminders'
                         as='select'
                         multiple
-                        className='w-full p-2 border rounded focus:ring-2 focus:ring-primary'
+                        className='w-full p-2 border rounded focus:border-zinc-800 focus:ring-1 focus:ring-zinc-600 outline-none placeholder:text-gray-500'
                       >
                         <option value='1'>1 hour</option>
                         <option value='24'>1 day</option>
@@ -212,7 +214,7 @@ const CreateEventModal = ({
                       <button
                         type='button'
                         onClick={onClose}
-                        className='px-4 py-2 text-gray-600 hover:text-gray-800'
+                        className='px-4 py-2 text-zinc-500 hover:text-gray-800'
                       >
                         Cancel
                       </button>

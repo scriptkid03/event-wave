@@ -40,14 +40,14 @@ const EventCalendar = ({
 
   return (
     <div
-      className='bg-gray-900 rounded-xl shadow-lg p-6 border border-gray-800'
+      className='bg-zinc-900 rounded-xl shadow-lg p-6 border border-zinc-800'
       style={{ width: "350px" }}
     >
       <div className='flex justify-between items-center mb-6'>
         <h2 className='text-xl font-semibold text-gray-100'>Event Calendar</h2>
         <button
           onClick={() => setShowFilters(!showFilters)}
-          className='flex items-center gap-2 px-3 py-1.5 text-sm rounded-lg border border-gray-700 hover:bg-gray-800 text-gray-300'
+          className='flex items-center gap-2 px-3 py-1.5 text-sm rounded-lg border border-gray-700 hover:bg-zinc-700 text-gray-300'
         >
           <FiFilter className='text-gray-300' />
           <span>Filters</span>
@@ -55,7 +55,7 @@ const EventCalendar = ({
       </div>
 
       {showFilters && (
-        <div className='mb-6 p-4 bg-gray-800 rounded-lg border border-gray-700'>
+        <div className='mb-6 p-4 bg-zinc-700 rounded-lg border border-zinc-600'>
           <h3 className='text-sm font-medium text-gray-300 mb-3'>
             Event Types
           </h3>
@@ -66,8 +66,8 @@ const EventCalendar = ({
                 onClick={() => handlePreferenceToggle(pref)}
                 className={`px-3 py-1.5 text-sm rounded-full transition-colors ${
                   selectedPreferences.includes(pref)
-                    ? "bg-blue-600 text-white"
-                    : "bg-gray-700 text-gray-300 border border-gray-600 hover:bg-gray-600"
+                    ? "bg-zinc-800 text-white"
+                    : "bg-zinc-600 text-gray-300 border border-zinc-600 hover:bg-zinc-600"
                 }`}
               >
                 {pref}

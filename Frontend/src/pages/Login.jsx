@@ -41,20 +41,20 @@ const Login = () => {
   };
 
   return (
-    <div className="h-screen bg-gray-900 flex flex-col">
+    <div className='h-screen bg-zinc-700 flex flex-col'>
       <AuthNavbar />
-      <div className="flex-1 flex items-center justify-center">
-        <div className="p-6 w-full max-w-sm">
-          <h1 className="text-2xl text-gray-100 font-bold mb-2">Login</h1>
-          <p className="text-gray-400 mb-6">
+      <div className='flex-1 flex items-center justify-center'>
+        <div className='p-6 w-full max-w-sm'>
+          <h1 className='text-2xl text-gray-100 font-bold mb-2'>Login</h1>
+          <p className='text-gray-400 mb-6'>
             Welcome back, please enter your details
           </p>
 
-          <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+          <form onSubmit={handleSubmit(onSubmit)} className='space-y-6'>
             <div>
               <input
-                type="email"
-                placeholder="Email"
+                type='email'
+                placeholder='Email'
                 {...register("email", {
                   required: "Email is required",
                   pattern: {
@@ -62,12 +62,12 @@ const Login = () => {
                     message: "Invalid email address",
                   },
                 })}
-                className={`w-full bg-gray-800 text-white p-4 py-2 rounded-lg border border-gray-700 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all ${
+                className={`w-full bg-zinc-800 text-white p-4 py-2 rounded-lg border border-zinc-700 focus:border-zinc-600 focus:ring-2 focus:ring-zinc-600 outline-none transition-all ${
                   errors.email ? "border-red-500" : ""
                 }`}
               />
               {errors.email && (
-                <p className="text-red-500 text-sm mt-1">
+                <p className='text-red-500 text-sm mt-1'>
                   {errors.email.message}
                 </p>
               )}
@@ -75,8 +75,8 @@ const Login = () => {
 
             <div>
               <input
-                type="password"
-                placeholder="Password"
+                type='password'
+                placeholder='Password'
                 {...register("password", {
                   required: "Password is required",
                   minLength: {
@@ -84,28 +84,28 @@ const Login = () => {
                     message: "Password must be at least 6 characters",
                   },
                 })}
-                className={`w-full bg-gray-800 text-white p-4 py-2 rounded-lg border border-gray-700 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all ${
+                className={`w-full bg-zinc-800 text-white p-4 py-2 rounded-lg border border-zinc-700 focus:border-zinc-600 focus:ring-2 focus:ring-zinc-600 outline-none transition-all ${
                   errors.password ? "border-red-500" : ""
                 }`}
               />
               {errors.password && (
-                <p className="text-red-500 text-sm mt-1">
+                <p className='text-red-500 text-sm mt-1'>
                   {errors.password.message}
                 </p>
               )}
             </div>
 
             <button
-              type="submit"
-              className="bg-blue-600 text-white px-4 py-2 rounded-lg w-full hover:bg-blue-700 transition-colors"
+              type='submit'
+              className='bg-blue-600 text-white px-4 py-2 rounded-lg w-full hover:bg-blue-700 transition-colors'
             >
               Login
             </button>
           </form>
 
-          <p className="mt-10 text-center text-sm text-gray-400">
+          <p className='mt-10 text-center text-sm text-gray-400'>
             Don't have an account?{" "}
-            <Link to="/signup" className="text-blue-600 font-bold">
+            <Link to='/signup' className='text-blue-600 font-bold'>
               Sign Up
             </Link>
           </p>

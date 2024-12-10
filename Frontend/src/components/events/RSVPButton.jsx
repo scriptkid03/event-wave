@@ -32,12 +32,12 @@ const RSVPButton = ({ event, onRSVP }) => {
 
   const getButtonClassName = () => {
     if (isUserRSVPed) {
-      return "bg-green-500 text-white px-4 py-2 rounded-lg cursor-not-allowed";
+      return "bg-green-900 text-white px-4 py-2 rounded-lg cursor-not-allowed";
     }
     if (isEventFull) {
       return "bg-gray-400 text-white px-4 py-2 rounded-lg cursor-not-allowed";
     }
-    return "bg-gray-900 hover:bg-gray-700 text-white px-4 py-2 rounded-lg";
+    return "bg-slate-900 hover:bg-gray-700 text-white px-4 py-2 rounded-lg";
   };
 
   const getButtonText = () => {

@@ -30,7 +30,7 @@ const EventBookings = () => {
 
   if (loading) {
     return (
-      <div className='min-h-screen bg-gray-900 p-8'>
+      <div className='min-h-screen bg-zinc-800 p-8'>
         <div className='max-w-6xl mx-auto'>
           <div className='flex items-center justify-center'>
             <div className='animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-primary'></div>
@@ -41,7 +41,7 @@ const EventBookings = () => {
   }
 
   return (
-    <div className='min-h-screen bg-gray-900 p-8'>
+    <div className='min-h-screen bg-zinc-700 p-8'>
       <div className='max-w-6xl mx-auto'>
         {/* Header */}
         <div className='mb-8'>
@@ -84,16 +84,16 @@ const EventBookings = () => {
         </div>
 
         {/* Bookings List */}
-        <div className='bg-gray-800 rounded-xl shadow-sm overflow-hidden'>
-          <div className='p-6 border-b border-gray-700'>
+        <div className='bg-zinc-800 rounded-xl shadow-sm overflow-hidden'>
+          <div className='p-6 border-b border-zinc-700'>
             <h2 className='text-lg font-semibold text-gray-100'>
               Registered Participants
             </h2>
           </div>
 
-          <div className='divide-y divide-gray-700'>
+          <div className='divide-y divide-zinc-700'>
             {bookings?.map((booking) => (
-              <div key={booking?._id} className='p-6 hover:bg-gray-700'>
+              <div key={booking?._id} className='p-6 hover:bg-zinc-500'>
                 <div className='flex justify-between items-start'>
                   <div>
                     <h3 className='font-medium text-gray-100'>

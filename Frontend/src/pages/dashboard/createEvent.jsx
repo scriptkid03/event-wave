@@ -134,14 +134,14 @@ const CreateEvent = () => {
   };
 
   return (
-    <div className='h-full bg-gray-900 overflow-y-auto p-4 md:p-8'>
+    <div className='h-full bg-zinc-700 overflow-y-auto p-4 md:p-8'>
       <div className='max-w-2xl mx-auto'>
         <h1 className='text-2xl font-bold text-gray-100 mb-8'>
           Create New Event
         </h1>
         <form
           onSubmit={handleSubmit(onSubmit)}
-          className='bg-gray-800 rounded-xl p-6 shadow-sm border border-gray-700'
+          className='bg-zinc-800 rounded-xl p-6 shadow-sm border border-zinc-700'
         >
           <div className='space-y-6'>
             {/* Image URL */}
@@ -153,8 +153,8 @@ const CreateEvent = () => {
                 type='url'
                 {...register("imageUrl")}
                 className={`w-full px-4 py-2 rounded-lg border ${
-                  errors.imageUrl ? "border-red-500" : "border-gray-600"
-                } bg-gray-700 text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500`}
+                  errors.imageUrl ? "border-red-500" : "border-zinc-600"
+                } bg-zinc-700 text-zinc-100 focus:outline-none focus:ring-2 focus:ring-zinc-600`}
               />
               {errors.imageUrl && (
                 <p className='mt-1 text-sm text-red-500'>
@@ -185,8 +185,8 @@ const CreateEvent = () => {
                 type='text'
                 {...register("name")}
                 className={`w-full px-4 py-2 rounded-lg border ${
-                  errors.name ? "border-red-500" : "border-gray-600"
-                } bg-gray-700 text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500`}
+                  errors.name ? "border-red-500" : "border-zinc-600"
+                } bg-zinc-700 text-zinc-100 focus:outline-none focus:ring-2 focus:ring-zinc-600`}
               />
               {errors.name && (
                 <p className='mt-1 text-sm text-red-500'>
@@ -203,8 +203,8 @@ const CreateEvent = () => {
               <select
                 {...register("category")}
                 className={`w-full px-4 py-2 rounded-lg border ${
-                  errors.category ? "border-red-500" : "border-gray-600"
-                } bg-gray-700 text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500`}
+                  errors.category ? "border-red-500" : "border-zinc-600"
+                } bg-zinc-700 text-zinc-100 focus:outline-none focus:ring-2 focus:ring-zinc-600`}
               >
                 <option value=''>Select category</option>
                 <option value='conference'>Conference</option>
@@ -231,8 +231,8 @@ const CreateEvent = () => {
                   type='datetime-local'
                   {...register("startDateTime")}
                   className={`w-full px-4 py-2 rounded-lg border ${
-                    errors.startDateTime ? "border-red-500" : "border-gray-600"
-                  } bg-gray-700 text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500`}
+                    errors.startDateTime ? "border-red-500" : "border-zinc-600"
+                  } bg-zinc-700 text-zinc-100 focus:outline-none focus:ring-2 focus:ring-zinc-600`}
                 />
                 {errors.startDateTime && (
                   <p className='mt-1 text-sm text-red-500'>
@@ -248,8 +248,8 @@ const CreateEvent = () => {
                   type='datetime-local'
                   {...register("endDateTime")}
                   className={`w-full px-4 py-2 rounded-lg border ${
-                    errors.endDateTime ? "border-red-500" : "border-gray-600"
-                  } bg-gray-700 text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500`}
+                    errors.endDateTime ? "border-red-500" : "border-zinc-600"
+                  } bg-zinc-700 text-zinc-100 focus:outline-none focus:ring-2 focus:ring-zinc-600`}
                 />
                 {errors.endDateTime && (
                   <p className='mt-1 text-sm text-red-500'>
@@ -268,8 +268,8 @@ const CreateEvent = () => {
                 type='text'
                 {...register("location")}
                 className={`w-full px-4 py-2 rounded-lg border ${
-                  errors.location ? "border-red-500" : "border-gray-600"
-                } bg-gray-700 text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500`}
+                  errors.location ? "border-red-500" : "border-zinc-600"
+                } bg-zinc-700 text-zinc-100 focus:outline-none focus:ring-2 focus:ring-zinc-600`}
               />
               {errors.location && (
                 <p className='mt-1 text-sm text-red-500'>
@@ -290,7 +290,7 @@ const CreateEvent = () => {
                 <input
                   type='text'
                   {...register("venue.name")}
-                  className='w-full px-4 py-2 rounded-lg border border-gray-600 bg-gray-700 text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500'
+                  className='w-full px-4 py-2 rounded-lg border border-zinc-600 bg-zinc-700 text-zinc-100 focus:outline-none focus:ring-2 focus:ring-zinc-600'
                 />
               </div>
               <div>
@@ -300,7 +300,7 @@ const CreateEvent = () => {
                 <input
                   type='text'
                   {...register("venue.address")}
-                  className='w-full px-4 py-2 rounded-lg border border-gray-600 bg-gray-700 text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500'
+                  className='w-full px-4 py-2 rounded-lg border border-zinc-600 bg-zinc-700 text-zinc-100 focus:outline-none focus:ring-2 focus:ring-zinc-600'
                 />
               </div>
               <div className='grid grid-cols-3 gap-4'>
@@ -311,7 +311,7 @@ const CreateEvent = () => {
                   <input
                     type='text'
                     {...register("venue.city")}
-                    className='w-full px-4 py-2 rounded-lg border border-gray-600 bg-gray-700 text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500'
+                    className='w-full px-4 py-2 rounded-lg border border-zinc-600 bg-zinc-700 text-zinc-100 focus:outline-none focus:ring-2 focus:ring-zinc-600'
                   />
                 </div>
                 <div>
@@ -321,7 +321,7 @@ const CreateEvent = () => {
                   <input
                     type='text'
                     {...register("venue.state")}
-                    className='w-full px-4 py-2 rounded-lg border border-gray-600 bg-gray-700 text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500'
+                    className='w-full px-4 py-2 rounded-lg border border-zinc-600 bg-zinc-700 text-zinc-100 focus:outline-none focus:ring-2 focus:ring-zinc-600'
                   />
                 </div>
                 <div>
@@ -331,7 +331,7 @@ const CreateEvent = () => {
                   <input
                     type='text'
                     {...register("venue.zipCode")}
-                    className='w-full px-4 py-2 rounded-lg border border-gray-600 bg-gray-700 text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500'
+                    className='w-full px-4 py-2 rounded-lg border border-zinc-600 bg-zinc-700 text-zinc-100 focus:outline-none focus:ring-2 focus:ring-zinc-600'
                   />
                 </div>
               </div>
@@ -347,8 +347,8 @@ const CreateEvent = () => {
                   type='number'
                   {...register("capacity")}
                   className={`w-full px-4 py-2 rounded-lg border ${
-                    errors.capacity ? "border-red-500" : "border-gray-600"
-                  } bg-gray-700 text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500`}
+                    errors.capacity ? "border-red-500" : "border-zinc-600"
+                  } bg-zinc-700 text-zinc-100 focus:outline-none focus:ring-2 focus:ring-zinc-600`}
                 />
                 {errors.capacity && (
                   <p className='mt-1 text-sm text-red-500'>
@@ -365,8 +365,8 @@ const CreateEvent = () => {
                   step='0.01'
                   {...register("ticketPrice")}
                   className={`w-full px-4 py-2 rounded-lg border ${
-                    errors.ticketPrice ? "border-red-500" : "border-gray-600"
-                  } bg-gray-700 text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500`}
+                    errors.ticketPrice ? "border-red-500" : "border-zinc-600"
+                  } bg-zinc-700 text-zinc-100 focus:outline-none focus:ring-2 focus:ring-zinc-600`}
                 />
                 {errors.ticketPrice && (
                   <p className='mt-1 text-sm text-red-500'>
@@ -385,7 +385,7 @@ const CreateEvent = () => {
                 type='text'
                 onChange={handleTagsChange}
                 placeholder='e.g., blockchain, web3, ethereum'
-                className='w-full px-4 py-2 rounded-lg border border-gray-600 bg-gray-700 text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500'
+                className='w-full px-4 py-2 rounded-lg border border-zinc-600 bg-zinc-700 text-zinc-100 focus:outline-none focus:ring-2 focus:ring-zinc-600'
               />
             </div>
 
@@ -398,8 +398,8 @@ const CreateEvent = () => {
                 {...register("description")}
                 rows='4'
                 className={`w-full px-4 py-2 rounded-lg border ${
-                  errors.description ? "border-red-500" : "border-gray-600"
-                } bg-gray-700 text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500`}
+                  errors.description ? "border-red-500" : "border-zinc-600"
+                } bg-zinc-700 text-zinc-100 focus:outline-none focus:ring-2 focus:ring-zinc-600`}
               ></textarea>
               {errors.description && (
                 <p className='mt-1 text-sm text-red-500'>
@@ -414,7 +414,7 @@ const CreateEvent = () => {
                 <input
                   type='checkbox'
                   {...register("isPrivate")}
-                  className='h-4 w-4 rounded border-gray-600 bg-gray-700 text-blue-600'
+                  className='h-4 w-4 rounded border-zinc-600 bg-gray-700 text-blue-600'
                 />
                 <label className='ml-2 text-sm text-gray-300'>
                   Private Event
@@ -429,7 +429,7 @@ const CreateEvent = () => {
                   type='number'
                   {...register("maxTicketsPerUser")}
                   min='1'
-                  className='w-full px-4 py-2 rounded-lg border border-gray-600 bg-gray-700 text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500'
+                  className='w-full px-4 py-2 rounded-lg border border-zinc-600 bg-zinc-700 text-zinc-100 focus:outline-none focus:ring-2 focus:ring-zinc-600'
                 />
               </div>
 
@@ -440,7 +440,7 @@ const CreateEvent = () => {
                 <input
                   type='datetime-local'
                   {...register("registrationDeadline")}
-                  className='w-full px-4 py-2 rounded-lg border border-gray-600 bg-gray-700 text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500'
+                  className='w-full px-4 py-2 rounded-lg border border-zinc-600 bg-zinc-700 text-zinc-100 focus:outline-none focus:ring-2 focus:ring-zinc-600'
                 />
                 {errors.registrationDeadline && (
                   <p className='mt-1 text-sm text-red-500'>
@@ -456,7 +456,7 @@ const CreateEvent = () => {
                 <textarea
                   {...register("cancellationPolicy")}
                   rows='3'
-                  className='w-full px-4 py-2 rounded-lg border border-gray-600 bg-gray-700 text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500'
+                  className='w-full px-4 py-2 rounded-lg border border-zinc-600 bg-zinc-700 text-zinc-100 focus:outline-none focus:ring-2 focus:ring-zinc-600'
                 ></textarea>
               </div>
             </div>

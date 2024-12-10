@@ -122,11 +122,12 @@ const SignUp = () => {
                 return (
                   <div className='space-y-6'>
                     <div>
-                      <label className='block text-sm font-medium text-gray-300 mb-1'>
+                      {/* <label className='block text-sm font-medium text-gray-300 mb-1'>
                         Email
-                      </label>
+                      </label> */}
                       <input
                         type='email'
+                        placeholder='Email'
                         {...register("email", {
                           required: "Email is required",
                           pattern: {
@@ -134,7 +135,7 @@ const SignUp = () => {
                             message: "Invalid email address",
                           },
                         })}
-                        className={`w-full bg-gray-800 text-white p-4 py-2 rounded-lg border border-gray-700 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all ${
+                        className={`w-full bg-zinc-800 text-white p-4 py-2 rounded-lg border border-zinc-700 focus:border-zinc-600 focus:ring-2 focus:ring-zinc-600 outline-none transition-all ${
                           errors.email ? "border-red-500" : ""
                         }`}
                       />
@@ -161,7 +162,7 @@ const SignUp = () => {
                               "Password must contain at least one letter and one number",
                           },
                         })}
-                        className={`w-full bg-gray-800 text-white p-4 py-2 rounded-lg border border-gray-700 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all ${
+                        className={`w-full bg-zinc-800 text-white p-4 py-2 rounded-lg border border-zinc-700 focus:border-zinc-600 focus:ring-2 focus:ring-zinc-600 outline-none transition-all ${
                           errors.password ? "border-red-500" : ""
                         }`}
                       />
@@ -179,15 +180,16 @@ const SignUp = () => {
                   <div className='space-y-6'>
                     <div className='grid grid-cols-2 gap-4'>
                       <div>
-                        <label className='block text-sm font-medium text-gray-300 mb-1'>
+                        {/* <label className='block text-sm font-medium text-gray-300 mb-1'>
                           First Name
-                        </label>
+                        </label> */}
                         <input
                           type='text'
+                          placeholder='First Name'
                           {...register("profile.firstName", {
                             required: "First name is required",
                           })}
-                          className='w-full bg-gray-800 text-white p-4 py-2 rounded-lg border border-gray-700'
+                          className='w-full bg-zinc-800 text-white p-4 py-2 rounded-lg border border-zinc-700'
                         />
                         {errors.profile?.firstName && (
                           <p className='text-red-500 text-sm mt-1'>
@@ -201,31 +203,31 @@ const SignUp = () => {
                         {...register("profile.lastName", {
                           required: "Last name is required",
                         })}
-                        className='w-full bg-gray-800 text-white p-4 py-2 rounded-lg border border-gray-700'
+                        className='w-full bg-zinc-800 text-white p-4 py-2 rounded-lg border border-zinc-700'
                       />
                     </div>
                     <input
                       type='tel'
                       placeholder='Phone Number'
                       {...register("profile.phoneNumber")}
-                      className='w-full bg-gray-800 text-white p-4 py-2 rounded-lg border border-gray-700'
+                      className='w-full bg-zinc-800 text-white p-4 py-2 rounded-lg border border-zinc-700'
                     />
                     <input
                       type='text'
                       placeholder='Company'
                       {...register("profile.company")}
-                      className='w-full bg-gray-800 text-white p-4 py-2 rounded-lg border border-gray-700'
+                      className='w-full bg-zinc-800 text-white p-4 py-2 rounded-lg border border-zinc-700'
                     />
                     <input
                       type='text'
                       placeholder='Job Title'
                       {...register("profile.jobTitle")}
-                      className='w-full bg-gray-800 text-white p-4 py-2 rounded-lg border border-gray-700'
+                      className='w-full bg-zinc-800 text-white p-4 py-2 rounded-lg border border-zinc-700'
                     />
                     <textarea
                       placeholder='Bio'
                       {...register("profile.bio")}
-                      className='w-full bg-gray-800 text-white p-4 py-2 rounded-lg border border-gray-700'
+                      className='w-full bg-zinc-800 text-white p-4 py-2 rounded-lg border border-zinc-700'
                       rows={3}
                     />
                   </div>
@@ -272,7 +274,7 @@ const SignUp = () => {
   };
 
   return (
-    <div className='h-screen overflow-hidden flex flex-col bg-gray-900'>
+    <div className='h-screen overflow-hidden flex flex-col bg-zinc-700'>
       <AuthNavbar />
       <div className='flex-1 flex items-center justify-center'>
         <div className='p-6 w-full max-w-sm'>
@@ -302,7 +304,7 @@ const SignUp = () => {
                   whileTap={{ scale: 0.95 }}
                   type='button'
                   onClick={() => paginate(-1)}
-                  className='flex-1 bg-gray-700 text-white p-4 py-2 rounded-lg border border-gray-600 hover:bg-gray-600 transition-all'
+                  className='flex-1 bg-zinc-800 text-white p-4 py-2 rounded-lg border border-zinc-600 hover:bg-zinc-700 transition-all'
                 >
                   Previous
                 </motion.button>

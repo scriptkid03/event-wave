@@ -46,7 +46,7 @@ const MyEvents = () => {
   return (
     <>
       <Navbar hideMyEvents={true} />
-      <div className='min-h-screen bg-gray-900 pt-8'>
+      <div className='min-h-screen bg-zinc-700 pt-8'>
         <div className='max-w-5xl mx-auto px-4'>
           <div className='flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-8'>
             <h1 className='text-2xl font-bold text-gray-100'>My Events</h1>
@@ -90,7 +90,7 @@ const MyEvents = () => {
                 <div
                   id={event._id}
                   key={event._id}
-                  className='bg-gray-800 rounded-xl shadow-sm hover:shadow-md transition-all duration-200 overflow-hidden'
+                  className='bg-zinc-800 rounded-xl shadow-sm hover:shadow-md transition-all duration-200 overflow-hidden'
                 >
                   <div className='p-6'>
                     <div className='flex flex-col md:flex-row justify-between items-start'>
@@ -103,14 +103,14 @@ const MyEvents = () => {
                             {event.category}
                           </span>
                         </div>
-                        <p className='mt-2 text-gray-300 text-sm'>
+                        <p className='mt-2 text-gray-500 text-sm'>
                           {event.description}
                         </p>
                       </div>
                     </div>
 
                     <div className='mt-6 grid grid-cols-2 md:grid-cols-4 gap-4'>
-                      <div className='flex items-center text-gray-600'>
+                      <div className='flex items-center text-gray-400'>
                         <FiCalendar className='mr-2 text-gray-300' />
                         <span className='text-sm'>
                           {new Date(event.startDateTime).toLocaleDateString(
@@ -132,7 +132,7 @@ const MyEvents = () => {
                             )}
                         </span>
                       </div>
-                      <div className='flex items-center text-gray-600'>
+                      <div className='flex items-center text-gray-400'>
                         <FiClock className='mr-2 text-gray-300' />
                         <span className='text-sm'>
                           {new Date(event.startDateTime).toLocaleTimeString(
@@ -152,11 +152,11 @@ const MyEvents = () => {
                             )}
                         </span>
                       </div>
-                      <div className='flex items-center text-gray-600'>
+                      <div className='flex items-center text-gray-400'>
                         <FiMapPin className='mr-2 text-gray-300' />
                         <span className='text-sm'>{event.location}</span>
                       </div>
-                      <div className='flex items-center text-gray-600'>
+                      <div className='flex items-center text-gray-400'>
                         <FiUsers className='mr-2 text-gray-300' />
                         <span className='text-sm'>
                           {event.attendees?.length || 0} attendees
@@ -171,7 +171,7 @@ const MyEvents = () => {
                     </button>
                   </div>
 
-                  <div className='px-6 py-4 bg-gray-700 border-t border-gray-600 flex justify-between items-center'>
+                  <div className='px-6 py-4 bg-zinc-600 border-t border-zinc-600 flex justify-between items-center'>
                     <span className='text-sm text-gray-300'>
                       Booked on{" "}
                       {new Date(
