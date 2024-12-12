@@ -53,9 +53,9 @@ const Dashboard = () => {
     }
   };
 
-  const handleEditEvent = (eventId) => {
-    navigate(`/dashboard/editevent/${eventId}`);
-  };
+  // const handleEditEvent = (eventId) => {
+  //   navigate(`/dashboard/editevent/${eventId}`);
+  // };
 
   const filteredEvents = events.filter((event) => {
     const matchesSearch =
