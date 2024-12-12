@@ -45,11 +45,14 @@ const MyEvents = () => {
 
   return (
     <>
-      <Navbar hideMyEvents={true} />
+      <div className='flex h-5 bg-zinc-700'></div>
+      <div className='flex bg-zinc-700 justify-center'>
+        <Navbar hideMyEvents={true} />
+      </div>
       <div className='min-h-screen bg-zinc-700 pt-8'>
-        <div className='max-w-5xl mx-auto px-4'>
+        <div className='max-w-5xl mx-auto px-4 relative top-24'>
           <div className='flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-8'>
-            <h1 className='text-2xl font-bold text-gray-100'>My Events</h1>
+            <h1 className='text-2xl font-bold text-gray-100'>Events</h1>
             <SearchBar
               placeholder='Search my events'
               value={searchQuery}
@@ -57,7 +60,8 @@ const MyEvents = () => {
               className='w-full md:w-64'
             />
           </div>
-          <div className='flex justify-between items-center mb-8'>
+
+          {/* <div className='flex justify-between items-center mb-8'>
             <div className='flex rounded-lg p-1 shadow-sm'>
               <button
                 onClick={() => setActiveTab("upcoming")}
@@ -70,7 +74,7 @@ const MyEvents = () => {
                 Upcoming
               </button>
             </div>
-          </div>
+          </div> */}
 
           {filteredEvents.length === 0 ? (
             <div className='text-center py-16 rounded-xl shadow-sm'>
@@ -85,12 +89,13 @@ const MyEvents = () => {
               </div>
             </div>
           ) : (
-            <div className='grid gap-6'>
+            // <div className='grid gap-6'>
+            <div className='flex justify-between gap-5 h-fit'>
               {filteredEvents.map((event) => (
                 <div
                   id={event._id}
                   key={event._id}
-                  className='bg-zinc-800 rounded-xl shadow-sm hover:shadow-md transition-all duration-200 overflow-hidden'
+                  className='bg-zinc-800 rounded-xl shadow-sm hover:shadow-md transition-all duration-200 overflow-hidden w-full h-full'
                 >
                   <div className='p-6'>
                     <div className='flex flex-col md:flex-row justify-between items-start'>
@@ -110,7 +115,7 @@ const MyEvents = () => {
                     </div>
 
                     <div className='mt-6 grid grid-cols-2 md:grid-cols-4 gap-4'>
-                      <div className='flex items-center text-gray-400'>
+                      <div className='flex flex-col justify-center items-center text-center text-gray-400'>
                         <FiCalendar className='mr-2 text-gray-300' />
                         <span className='text-sm'>
                           {new Date(event.startDateTime).toLocaleDateString(
@@ -132,7 +137,7 @@ const MyEvents = () => {
                             )}
                         </span>
                       </div>
-                      <div className='flex items-center text-gray-400'>
+                      <div className='flex flex-col justify-center items-center text-center text-gray-400'>
                         <FiClock className='mr-2 text-gray-300' />
                         <span className='text-sm'>
                           {new Date(event.startDateTime).toLocaleTimeString(
@@ -152,11 +157,11 @@ const MyEvents = () => {
                             )}
                         </span>
                       </div>
-                      <div className='flex items-center text-gray-400'>
+                      <div className='flex flex-col justify-center items-center text-center text-gray-400'>
                         <FiMapPin className='mr-2 text-gray-300' />
                         <span className='text-sm'>{event.location}</span>
                       </div>
-                      <div className='flex items-center text-gray-400'>
+                      <div className='flex flex-col justify-center items-center text-center text-gray-400'>
                         <FiUsers className='mr-2 text-gray-300' />
                         <span className='text-sm'>
                           {event.attendees?.length || 0} attendees
@@ -188,6 +193,7 @@ const MyEvents = () => {
                 </div>
               ))}
             </div>
+            // </div>
           )}
         </div>
       </div>

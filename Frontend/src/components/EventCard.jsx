@@ -39,7 +39,7 @@ const EventCard = ({
           className='mt-4'
         >
           <h3 className='text-xl font-semibold text-gray-100'>{title}</h3>
-          <p className='text-gray-400 mt-2 max-h-[6rem] line-clamp-4  '>
+          <p className='text-gray-400 mt-2 max-h-[6rem] line-clamp-1  '>
             {description}
           </p>
 
