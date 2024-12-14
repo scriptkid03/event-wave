@@ -17,7 +17,8 @@ import { Toaster } from "react-hot-toast";
 import AdminRoute from "./components/auth/AdminRoute";
 import { AuthProvider } from "./contexts/AuthContext";
 import EventBookings from "./pages/EventBookings";
-import CreateEvent from "./pages/dashboard/createEvent";
+import CreateEventForm from './pages/dashboard/createEvent';
+import AllEvents from './pages/AllEvents'; 
 
 const App = () => {
   return (
@@ -68,7 +69,7 @@ const App = () => {
               path='/dashboard/createEvent'
               element={
                 <AdminRoute>
-                  <CreateEvent />
+                  <CreateEventForm />
                 </AdminRoute>
               }
             />
@@ -84,6 +85,7 @@ const App = () => {
 
             {/* Redirect unauthorized access to login */}
             <Route path='*' element={<Navigate to='/login' />} />
+            <Route path="/events" element={<AllEvents />} />
           </Routes>
         </Router>
         <Toaster

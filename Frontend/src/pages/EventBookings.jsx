@@ -30,7 +30,7 @@ const EventBookings = () => {
 
   if (loading) {
     return (
-      <div className='min-h-screen bg-zinc-800 p-8'>
+      <div className='min-h-screen bg-gray-900 p-8'>
         <div className='max-w-6xl mx-auto'>
           <div className='flex items-center justify-center'>
             <div className='animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-primary'></div>
@@ -41,25 +41,25 @@ const EventBookings = () => {
   }
 
   return (
-    <div className='min-h-screen bg-zinc-700 p-8'>
+    <div className='min-h-screen bg-white p-8'>
       <div className='max-w-6xl mx-auto'>
         {/* Header */}
         <div className='mb-8'>
           <button
             onClick={() => navigate("/dashboard")}
-            className='flex items-center text-gray-300 hover:text-gray-100 mb-4'
+            className='flex items-center text-black mb-4'
           >
             <FiArrowLeft className='mr-2' />
-            Back to Dashboard
+            Event Hive Dashboard
           </button>
 
           <div className='flex justify-between items-start'>
             <div>
-              <h1 className='text-2xl font-bold text-gray-100'>
+              <h1 className='text-2xl font-bold text-black'>
                 {event?.name}
               </h1>
               {event?.startDateTime && (
-                <p className='text-gray-400 mt-1'>
+                <p className='text-black mt-1'>
                   {new Date(event.startDateTime).toLocaleDateString("en-US", {
                     year: "numeric",
                     month: "long",
@@ -75,25 +75,25 @@ const EventBookings = () => {
               )}
             </div>
             <div className='text-right'>
-              <div className='text-lg font-semibold text-gray-100'>
+              <div className='text-lg font-semibold text-black'>
                 {bookings?.length || 0}/{event?.capacity || 0}
               </div>
-              <div className='text-sm text-gray-400'>seats booked</div>
+              <div className='text-sm text-black'>seats booked</div>
             </div>
           </div>
         </div>
 
         {/* Bookings List */}
-        <div className='bg-zinc-800 rounded-xl shadow-sm overflow-hidden'>
-          <div className='p-6 border-b border-zinc-700'>
-            <h2 className='text-lg font-semibold text-gray-100'>
-              Registered Participants
+        <div className='bg-black rounded-xl shadow-sm overflow-hidden'>
+          <div className='p-6 border-b border-gray-700'>
+            <h2 className='text-lg font-semibold text-white'>
+              Registered Users
             </h2>
           </div>
 
-          <div className='divide-y divide-zinc-700'>
+          <div className='divide-y divide-gray-700'>
             {bookings?.map((booking) => (
-              <div key={booking?._id} className='p-6 hover:bg-zinc-500'>
+              <div key={booking?._id} className='p-6'>
                 <div className='flex justify-between items-start'>
                   <div>
                     <h3 className='font-medium text-gray-100'>

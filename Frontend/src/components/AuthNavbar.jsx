@@ -1,14 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { FaDashcube } from "react-icons/fa";
+import { MdHive } from "react-icons/md";
 
 const AuthNavbar = () => {
   return (
-    <nav className='bg-zinc-700 px-4 md:px-6 py-4'>
+    <nav className='bg-white px-4 md:px-6 py-4'>
       <div className='flex w-full items-center justify-center space-x-4'>
         <Link to='/' className='flex items-center r space-x-2'>
-          <FaDashcube className='text-blue-600 h-8 md:h-11' />
-          <h1 className='text-xl font-bold text-gray-100'>Event Wave</h1>
+          <h1 className='text-xl font-bold text-Eventgray'>Event <span className="text-Eventhive">Hive</span></h1>
+          <MdHive className='text-Eventhive h-8 md:h-11' />
         </Link>
       </div>
     </nav>

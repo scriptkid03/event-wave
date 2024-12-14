@@ -4,6 +4,7 @@ import toast from "react-hot-toast";
 import { useAuth } from "../../contexts/AuthContext";
 import { FaChevronRight } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
+
 const RSVPButton = ({ event, onRSVP }) => {
   const [loading, setLoading] = useState(false);
   const { user } = useAuth();
@@ -22,34 +23,34 @@ const RSVPButton = ({ event, onRSVP }) => {
 
   const handleRSVPError = (error) => {
     if (error.code === 403) {
-      toast.error("You've already RSVP'd to this event");
+      toast.error("You've already reserved this event");
     } else if (error.code === 406) {
       toast.error("Event is at full capacity");
     } else {
-      toast.error("Failed to RSVP. Please try again later.");
+      toast.error("Failed to reserve seat. Please try again later.");
     }
   };
 
   const getButtonClassName = () => {
     if (isUserRSVPed) {
-      return "bg-green-900 text-white px-4 py-2 rounded-lg cursor-not-allowed";
+      return "bg-Eventhive text-white px-4 py-2 rounded-lg";
     }
     if (isEventFull) {
       return "bg-gray-400 text-white px-4 py-2 rounded-lg cursor-not-allowed";
     }
-    return "bg-slate-900 hover:bg-gray-700 text-white px-4 py-2 rounded-lg";
+    return "bg-white hover:bg-gray-700 text-black px-4 py-2 rounded-lg";
   };
 
   const getButtonText = () => {
     if (loading) return "Processing...";
-    if (isUserRSVPed) return "RSVP'd";
+    if (isUserRSVPed) return "Reserved";
     if (isEventFull) return "Full";
-    return "RSVP";
+    return "Reserve Seat";
   };
 
   const handleRSVP = async () => {
     if (!user) {
-      toast.error("Please login to RSVP");
+      toast.error("Please login to reserve event");
       return;
     }
 
@@ -57,7 +58,7 @@ const RSVPButton = ({ event, onRSVP }) => {
     try {
       const response = await api.post(`/events/${event._id}/rsvp`);
       onRSVP && onRSVP(response.data);
-      toast.success("Successfully RSVP'd to event!");
+      toast.success("Successfully reserved event!");
     } catch (error) {
       handleRSVPError(error);
     } finally {
@@ -71,21 +72,23 @@ const RSVPButton = ({ event, onRSVP }) => {
   }
 
   return (
-    <div className='flex items-center w-full gap-4 mt-5'>
-      <button
-        onClick={handleRSVP}
-        disabled={loading || isUserRSVPed || isEventFull}
-        className={`${getButtonClassName()} w-full`}
-      >
-        {getButtonText()}
-      </button>
-
-      {isUserRSVPed && (
+    <div className='flex flex-col w-full gap-4 mt-5'>
+      {isUserRSVPed ? (
         <button
           onClick={() => navigate(`/my-events#${event._id}`)}
-          className='hover:opacity-50 text-white px-4 py-2 rounded-lg'
+          className={`${getButtonClassName()} w-full flex items-center justify-between`}
+          disabled={loading}
         >
+          <span>{getButtonText()}</span>
           <FaChevronRight />
+        </button>
+      ) : (
+        <button
+          onClick={handleRSVP}
+          disabled={loading || isUserRSVPed || isEventFull}
+          className={`${getButtonClassName()} w-full`}
+        >
+          {getButtonText()}
         </button>
       )}
     </div>

@@ -59,7 +59,7 @@ const EventCalendar = ({
 
       {/* Event Types Filter */}
       <div className='mt-4'>
-        <h4 className='text-sm font-medium mb-2'>Event Types</h4>
+        <h4 className='text-sm font-medium mb-2'>Tags</h4>
         <div className='flex flex-wrap gap-2'>
           {Array.from(new Set(events.map((event) => event.type))).map(
             (type) => (

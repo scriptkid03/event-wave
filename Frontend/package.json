@@ -1,5 +1,5 @@
 {
-  "name": "event-wave",
+  "name": "event",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -9,14 +9,14 @@
     "font-awesome": "^4.7.0",
     "formik": "^2.4.6",
     "framer-motion": "^11.0.8",
-    "react": "^18.2.0",
+    "react": "^19.0.0",
     "react-calendar": "^5.1.0",
-    "react-dom": "^18.2.0",
+    "react-dom": "^19.0.0",
     "react-hook-form": "^7.54.0",
     "react-hot-toast": "^2.4.1",
     "react-icons": "^5.4.0",
-    "react-router-dom": "^6.22.0",
-    "react-scripts": "5.0.1",
+    "react-router-dom": "^6.28.0",
+    "react-scripts": "^5.0.1",
     "yup": "^1.5.0"
   },
   "scripts": {

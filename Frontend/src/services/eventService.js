@@ -13,7 +13,7 @@ const getRandomImage = () => {
 
 export const getEvents = async () => {
   try {
-    const response = await api.get("/events");
+    const response = await api.get("http://localhost:3001/api/events");
     return response?.data?.data?.map((event) => ({
       ...event,
       image: event.image || getRandomImage(),
@@ -58,6 +58,7 @@ export const deleteEvent = async (eventId) => {
 
 export const createEvent = async (event) => {
   const response = await api.post("/events", event);
+  console.log(response);
   return response.data;
 };
 
